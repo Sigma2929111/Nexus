@@ -1,0 +1,1 @@
+"""MASTER registry package."""

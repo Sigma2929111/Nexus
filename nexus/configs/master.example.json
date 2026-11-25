@@ -1,0 +1,10 @@
+{
+  "role": "master",
+  "host": "0.0.0.0",
+  "port": 8787,
+  "public_url": "https://203.0.113.10:8787",
+  "heartbeat_interval": 10,
+  "offline_after": 45,
+  "mdns_enabled": true,
+  "seed_masters": []
+}

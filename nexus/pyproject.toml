@@ -1,0 +1,37 @@
+[project]
+name = "nexus-cloud"
+version = "0.1.0"
+description = "NEXUS Cloud - distributed multi-server control platform (MASTER + BLOCK agents)"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.27",
+    "pydantic>=2.6",
+    "pydantic-settings>=2.2",
+    "sqlmodel>=0.0.16",
+    "psutil>=5.9",
+    "httpx>=0.27",
+    "websockets>=12.0",
+    "cryptography>=42.0",
+    "zeroconf>=0.131",
+    "typer>=0.12",
+    "python-multipart>=0.0.9",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.23"]
+
+[project.scripts]
+nexus = "nexus.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["nexus"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
